@@ -2,7 +2,7 @@
     "name" : "prophetarum/nfe-php",
     "description" : "Realiza de forma simples as principais funções de integração com NFe",
     "type" : "library",
-    "licence" : "GPL-3.0-or-later",
+    "license" : "GPL-3.0-or-later",
     "authors" : [
         {
             "name" : "prophetarum",
