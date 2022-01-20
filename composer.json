@@ -1,0 +1,21 @@
+{
+    "name" : "prophetarum/nfe-php",
+    "description" : "Realiza de forma simples as principais funções de integração com NFe",
+    "type" : "library",
+    "licence" : "GPL-3.0-or-later",
+    "authors" : [
+        {
+            "name" : "prophetarum",
+            "email" : "null@null.com"
+        }
+    ],
+    "autoload" : {
+        "psr-4": {
+            "Prophetarum\\NfePhp\\" : "src/"
+        }
+    },
+    "require" : {
+        "php" : ">=7.0",
+        "nfephp-org/sped-nfe": "^5.0"
+    }
+}
