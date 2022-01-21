@@ -30,7 +30,7 @@ class Eventos
             try {
                 //executa a busca pelos documentos
                 $resp = $this->tools->sefazDistDFe( $ultNSU );
-                file_put_contents( $this->pastaDownloads . $this->dateTime . '-' . $x . '-resp.txt', $resp);
+                // file_put_contents( $this->pastaDownloads . $this->dateTime . '-' . $x . '-resp.txt', $resp);
                 $x++;
             } catch (\Exception $e) {
                 echo $e->getMessage(); //tratar o erro
@@ -92,10 +92,9 @@ class Eventos
         $date = ( new \DateTime() )->setTimezone( ( new \DateTimeZone('America/Sao_Paulo') )  );
         $date->add( new \DateInterval( 'PT1H' ) );
         $resposta['proxima-consulta'] = $date->format('Y-m-d H:i:s');
-        file_put_contents( $this->pastaDownloads . $this->dateTime . '-' . $x . '-resposta.txt', json_encode($resposta));
+        // file_put_contents( $this->pastaDownloads . $this->dateTime . '-' . $x . '-resposta.txt', json_encode($resposta));
 
-
-        return $resposta;
+        return json_encode($resposta);
     }
 
 
