@@ -71,7 +71,7 @@ class Eventos
                 //esse processamento depende do seu aplicativo
 
                 echo PHP_EOL . "NSU: $numnsu :" . PHP_EOL . "$content" . PHP_EOL;
-                $resposta[$numnsu] = $content;
+                $resposta['eventos'][$numnsu] = $content;
                 
                 if ($tipo == 'resNFe') {
                     $xml = simplexml_load_string( $content );
@@ -91,10 +91,12 @@ class Eventos
         echo PHP_EOL . "Ultimo NSU: $ultNSU" . PHP_EOL;
         $date = ( new \DateTime() )->setTimezone( ( new \DateTimeZone('America/Sao_Paulo') )  );
         $date->add( new \DateInterval( 'PT1H' ) );
+        $resposta['ultimo-nsu'] = $ultNSU;
         $resposta['proxima-consulta'] = $date->format('Y-m-d H:i:s');
-        // file_put_contents( $this->pastaDownloads . $this->dateTime . '-' . $x . '-resposta.txt', json_encode($resposta));
+        // file_put_contents( $this->pastaDownloads . $this->dateTime . '-' . $x . '-resposta.txt', json_encode($resposta) );
+        // mudar arquivo retorno, entre outros mandar o ultimo nsu
 
-        return json_encode($resposta);
+        return $resposta;
     }
 
 
