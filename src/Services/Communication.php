@@ -18,7 +18,7 @@ class Communication
         //      quando houver a necessidade de protocolos
         $arr = $this->extrator( $response );
         
-        file_put_contents( $this->dir . $this->dateTime . '-consulta-contribuinte.txt', json_encode( $arr ) );
+        // file_put_contents( $this->dir . $this->dateTime . '-consulta-contribuinte.txt', json_encode( $arr ) );
         return json_encode( $arr );
         // echo PHP_EOL . ">> CONSULTA CONTRIBUINTE <<" . PHP_EOL;
     }
@@ -33,7 +33,7 @@ class Communication
         //      quando houver a necessidade de protocolos
         $arr = $this->extrator( $response );
 
-        file_put_contents( $this->dir . $this->dateTime . '-consulta-chave.txt', json_encode( $arr ) );
+        // file_put_contents( $this->dir . $this->dateTime . '-consulta-chave.txt', json_encode( $arr ) );
         return json_encode( $arr );
         // echo PHP_EOL . ">> CONSULTA CHAVE <<" . PHP_EOL;
     }
@@ -52,7 +52,7 @@ class Communication
         //      quando houver a necessidade de protocolos
         $arr = $this->extrator( $response );
         
-        file_put_contents( $this->dir . $this->dateTime . '-confirma.txt', json_encode( $arr ) );
+        // file_put_contents( $this->dir . $this->dateTime . '-confirma.txt', json_encode( $arr ) );
         return json_encode( $arr );
         // echo PHP_EOL . ">> CONFIRMACAO DA OPERACAO <<" . PHP_EOL;
     }
@@ -62,7 +62,7 @@ class Communication
         //só funciona para o modelo 55
         //este serviço somente opera em ambiente de produção
         $response = $this->tools->sefazDownload( $chave );
-        file_put_contents( $this->dir . $this->dateTime . '-download-response.txt', $response );
+        // file_put_contents( $this->dir . $this->dateTime . '-download-response.txt', $response );
 
         // $stz = new Standardize($response);
         // $std = $stz->toStd();
@@ -70,15 +70,15 @@ class Communication
         $std = $this->extrator( $response, "stdClass" );
     
         if ($std->cStat != 138) {
-            echo PHP_EOL . "Documento não retornado. [$std->cStat] $std->xMotivo " . PHP_EOL;
+            // echo PHP_EOL . "Documento não retornado. [$std->cStat] $std->xMotivo " . PHP_EOL;
             return;
         }
     
         $zip = $std->loteDistDFeInt->docZip;
-        file_put_contents( $this->dir . $this->dateTime . '-download-zip.txt', $zip );
+        // file_put_contents( $this->dir . $this->dateTime . '-download-zip.txt', $zip );
     
         $arquivo = gzdecode( base64_decode( $zip ) );
-        file_put_contents( $chave . '.xml', $arquivo );
+        // file_put_contents( $chave . '.xml', $arquivo );
         return $arquivo;
         // echo PHP_EOL . ">> DOWNLOAD OK <<" . PHP_EOL;
     }
@@ -96,7 +96,7 @@ class Communication
         //      quando houver a necessidade de protocolos
 
         $arr = $this->extrator( $response );
-        file_put_contents( $this->dir . $this->dateTime . '-ciencia.txt', json_encode( $arr ) );
+        // file_put_contents( $this->dir . $this->dateTime . '-ciencia.txt', json_encode( $arr ) );
         return json_encode( $arr );
         // echo PHP_EOL . ">> CIENCIA DA OPERACAO <<" . PHP_EOL;
     }

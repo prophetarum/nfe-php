@@ -33,7 +33,7 @@ class Eventos
                 // file_put_contents( $this->pastaDownloads . $this->dateTime . '-' . $x . '-resp.txt', $resp);
                 $x++;
             } catch (\Exception $e) {
-                echo $e->getMessage(); //tratar o erro
+                // echo $e->getMessage(); //tratar o erro
             }
         
             //extrair e salvar os retornos
@@ -51,7 +51,7 @@ class Eventos
             $lote = $node->getElementsByTagName('loteDistDFeInt')->item(0);
     
             if ( empty( $lote ) ) {
-                echo PHP_EOL . "Lote vazio" . PHP_EOL;
+                // echo PHP_EOL . "Lote vazio" . PHP_EOL;
                 continue; //lote vazio
             }
     
@@ -70,13 +70,13 @@ class Eventos
                 //processar o conteudo do NSU, da forma que melhor lhe interessar
                 //esse processamento depende do seu aplicativo
 
-                echo PHP_EOL . "NSU: $numnsu :" . PHP_EOL . "$content" . PHP_EOL;
+                // echo PHP_EOL . "NSU: $numnsu :" . PHP_EOL . "$content" . PHP_EOL;
                 $resposta['eventos'][$numnsu] = $content;
                 
                 if ($tipo == 'resNFe') {
                     $xml = simplexml_load_string( $content );
                     $chave = $xml->chNFe->__toString();
-                    echo PHP_EOL . $chave . PHP_EOL;
+                    // echo PHP_EOL . $chave . PHP_EOL;
                     $resposta['nfes'][] = $chave;
                 }
             }
@@ -88,7 +88,7 @@ class Eventos
             sleep(2);
         }
 
-        echo PHP_EOL . "Ultimo NSU: $ultNSU" . PHP_EOL;
+        // echo PHP_EOL . "Ultimo NSU: $ultNSU" . PHP_EOL;
         $date = ( new \DateTime() )->setTimezone( ( new \DateTimeZone('America/Sao_Paulo') )  );
         $date->add( new \DateInterval( 'PT1H' ) );
         $resposta['ultimo-nsu'] = $ultNSU;
