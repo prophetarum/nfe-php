@@ -92,11 +92,11 @@ class Eventos
         $date = ( new \DateTime() )->setTimezone( ( new \DateTimeZone('America/Sao_Paulo') )  );
         $date->add( new \DateInterval( 'PT1H' ) );
         $resposta['ultimo-nsu'] = $ultNSU;
-        $resposta['proxima-consulta'] = $date->format('Y-m-d H:i:s');
+        // $resposta['proxima-consulta'] = $date->format('Y-m-d H:i:s');
         // file_put_contents( $this->pastaDownloads . $this->dateTime . '-' . $x . '-resposta.txt', json_encode($resposta) );
         // mudar arquivo retorno, entre outros mandar o ultimo nsu
 
-        return $resposta;
+        return json_encode( $resposta );
     }
 
 

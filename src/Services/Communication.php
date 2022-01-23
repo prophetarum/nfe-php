@@ -79,7 +79,7 @@ class Communication
     
         $arquivo = gzdecode( base64_decode( $zip ) );
         // file_put_contents( $chave . '.xml', $arquivo );
-        return $arquivo;
+        return json_encode( $arquivo );
         // echo PHP_EOL . ">> DOWNLOAD OK <<" . PHP_EOL;
     }
 
