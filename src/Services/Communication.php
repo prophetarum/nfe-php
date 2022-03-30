@@ -62,7 +62,7 @@ class Communication
         //só funciona para o modelo 55
         //este serviço somente opera em ambiente de produção
         $response = $this->tools->sefazDownload( $chave );
-        // file_put_contents( $this->dir . $this->dateTime . '-download-response.txt', $response );
+        file_put_contents( $this->dir . $chave . '-download-response.txt', $response );
 
         // $stz = new Standardize($response);
         // $std = $stz->toStd();

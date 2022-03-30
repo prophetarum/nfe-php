@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a9d99042fcc5cb6cc158f4130ced820d",
+    "content-hash": "09f4d75fbd4c444d726ea698ad929587",
     "packages": [
         {
             "name": "justinrainbow/json-schema",
@@ -191,16 +191,16 @@
         },
         {
             "name": "nfephp-org/sped-gtin",
-            "version": "v1.0.10",
+            "version": "v1.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nfephp-org/sped-gtin.git",
-                "reference": "46c8a7a1508621c6adba6b4866cd34c0664df8cc"
+                "reference": "d28271ec34ddaf5983f9f5b5ac3707b27bbffd15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nfephp-org/sped-gtin/zipball/46c8a7a1508621c6adba6b4866cd34c0664df8cc",
-                "reference": "46c8a7a1508621c6adba6b4866cd34c0664df8cc",
+                "url": "https://api.github.com/repos/nfephp-org/sped-gtin/zipball/d28271ec34ddaf5983f9f5b5ac3707b27bbffd15",
+                "reference": "d28271ec34ddaf5983f9f5b5ac3707b27bbffd15",
                 "shasum": ""
             },
             "require": {
@@ -253,22 +253,22 @@
             ],
             "support": {
                 "issues": "https://github.com/nfephp-org/sped-gtin/issues",
-                "source": "https://github.com/nfephp-org/sped-gtin/tree/v1.0.10"
+                "source": "https://github.com/nfephp-org/sped-gtin/tree/v1.0.11"
             },
-            "time": "2021-12-26T12:41:24+00:00"
+            "time": "2022-02-14T17:26:11+00:00"
         },
         {
             "name": "nfephp-org/sped-nfe",
-            "version": "v5.0.126",
+            "version": "v5.0.127",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nfephp-org/sped-nfe.git",
-                "reference": "d42a07f830a45a6e83005e380f5f228e1b951128"
+                "reference": "4c4a5fbf419e8cc1d1180e4db14c26dd87f35762"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nfephp-org/sped-nfe/zipball/d42a07f830a45a6e83005e380f5f228e1b951128",
-                "reference": "d42a07f830a45a6e83005e380f5f228e1b951128",
+                "url": "https://api.github.com/repos/nfephp-org/sped-nfe/zipball/4c4a5fbf419e8cc1d1180e4db14c26dd87f35762",
+                "reference": "4c4a5fbf419e8cc1d1180e4db14c26dd87f35762",
                 "shasum": ""
             },
             "require": {
@@ -330,9 +330,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nfephp-org/sped-nfe/issues",
-                "source": "https://github.com/nfephp-org/sped-nfe/tree/v5.0.126"
+                "source": "https://github.com/nfephp-org/sped-nfe/tree/v5.0.127"
             },
-            "time": "2021-10-21T12:24:09+00:00"
+            "time": "2022-01-07T17:39:42+00:00"
         },
         {
             "name": "psr/log",
@@ -392,7 +392,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.0"
+        "php": ">=7.2"
     },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"
