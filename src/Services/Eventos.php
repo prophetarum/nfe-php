@@ -159,7 +159,7 @@ class Eventos
     
             //essas tags irão conter os documentos zipados
             $docs = $lote->getElementsByTagName('docZip');
-            $this->linha( '$docs: ' .  $dom->saveHTML( $docs ) );
+            // $this->linha( '$docs: ' .  $dom->saveHTML( $docs ) );
 
     
             foreach ( $docs as $doc ) {
