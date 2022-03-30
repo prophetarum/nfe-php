@@ -79,7 +79,7 @@ class Eventos
                 // die();
                 $resp = $this->tools->sefazDistDFe( $ultNSU );
                 $this->linha( 'salva em arquivo a busca pelos documentos' );
-                file_put_contents( $this->pastaDownloads . $this->dateTime . '-' . $x . '-resp.txt', $resp);
+                // file_put_contents( $this->pastaDownloads . $this->dateTime . '-' . $x . '-resp.txt', $resp);
 
                 // $resp = file_get_contents( $this->pastaDownloads . "2022_03_29_16_48_35-busca-por-documentos.txt");
                 // $resp = null;
