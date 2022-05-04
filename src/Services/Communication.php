@@ -8,6 +8,26 @@ use NFePHP\NFe\Common\Standardize;
 
 class Communication 
 {
+
+    public function desconhecimentoDaOperacao( $chNFe )
+    {
+        $tpEvento = '210220'; //desconhecimento da operação
+        $xJust = ''; //a ciencia não requer justificativa
+        $nSeqEvento = 1; //a ciencia em geral será numero inicial de uma sequencia para essa nota e evento
+
+        $response = $this->tools->sefazManifesta( $chNFe, $tpEvento, $xJust = '', $nSeqEvento = 1 );
+
+        //você pode padronizar os dados de retorno atraves da classe abaixo
+        //de forma a facilitar a extração dos dados do XML
+        //NOTA: mas lembre-se que esse XML muitas vezes será necessário,
+        //      quando houver a necessidade de protocolos
+        $arr = $this->extrator( $response );
+        
+        // file_put_contents( $this->dir . $this->dateTime . '-confirma.txt', json_encode( $arr ) );
+        return json_encode( $arr );
+        // echo PHP_EOL . ">> CONFIRMACAO DA OPERACAO <<" . PHP_EOL;
+    }
+
     public function consultaContribuinte( $uf, $cnpj, $iest = '', $cpf = '' )
     {
         $response = $this->tools->sefazCadastro( $uf, $cnpj, $iest, $cpf );
